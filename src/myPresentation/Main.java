@@ -42,21 +42,21 @@ public class Main extends JFrame {
         containerImage.setBorder(BorderFactory.createTitledBorder(null, "This is a little bit about me:", TitledBorder.CENTER,
                 TitledBorder.DEFAULT_JUSTIFICATION, new Font(Font.MONOSPACED, Font.PLAIN, 20), BLACK));
         containerImage.add(imageLabel);
+        
+        //Botones
         containerButtons.add(myPhoto);
         containerButtons.add(myHobby);
         containerButtons.add(myExpectations);
 
-        //Actions performed
+        //Actions performed, Mouse y Key Listener
         myPhoto.addActionListener(listener);
         myHobby.addActionListener(listener);
         myExpectations.addActionListener(listener);
 
-        //Mouse Events
         myHobby.addMouseListener(listener);
         myExpectations.addMouseListener(listener);
         myPhoto.addMouseListener(listener);
 
-        //Key Listener
         myPhoto.addKeyListener(listener);
         myHobby.addKeyListener(listener);
         myExpectations.addKeyListener(listener);
@@ -131,12 +131,11 @@ public class Main extends JFrame {
             //JOptionPane.showMessageDialog(null,"pressed");
             if(e.getKeyCode() == 77){
                 imageLabel.setIcon(null);
-                expectations.setText("Learn enough to charge my boss more...I also want to have a good internship as a software developer and improve my skills");
+                expectations.setText("Learn enough to charge my boss more...I also want to learn good practices as a software developer and improve my skills");
                 expectations.setBackground(null);
                 expectations.setForeground(Color.BLACK);
                 containerImage.add(expectations);
-                repaint();
-            }
+                }
         }
         @Override
         public void keyReleased(KeyEvent e) {
