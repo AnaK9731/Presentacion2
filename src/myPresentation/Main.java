@@ -8,7 +8,7 @@ import java.awt.event.*;
 import static java.awt.Color.BLACK;
 
 public class Main extends JFrame {
-    //atributos
+    
     private JButton myPhoto, myHobby, myExpectations;
     private Title title;
     private JPanel containerButtons, containerImage;
@@ -16,7 +16,6 @@ public class Main extends JFrame {
     private Listener listener;
     private JTextArea expectations;
 
-    //metodos
     public Main() {
         initGUI();
         this.setTitle("My Presentation");
@@ -52,15 +51,14 @@ public class Main extends JFrame {
         myPhoto.addActionListener(listener);
         myHobby.addActionListener(listener);
         myExpectations.addActionListener(listener);
-
         myHobby.addMouseListener(listener);
         myExpectations.addMouseListener(listener);
         myPhoto.addMouseListener(listener);
-
         myPhoto.addKeyListener(listener);
         myHobby.addKeyListener(listener);
         myExpectations.addKeyListener(listener);
-
+        
+        //Distribución espacial en ventana
         this.add(title, BorderLayout.NORTH);
         this.add(containerButtons, BorderLayout.SOUTH);
         this.add(containerImage, BorderLayout.CENTER);
@@ -76,6 +74,8 @@ public class Main extends JFrame {
         });
     }
 
+    //Listener
+    
     private class Listener implements ActionListener, MouseListener, KeyListener {
 
         private ImageIcon image;
